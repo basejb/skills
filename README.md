@@ -25,6 +25,7 @@
 | producthunt | `/basejb:producthunt` | Product Hunt GraphQL API (글·토픽·유저·컬렉션 조회) | [ReScienceLab/opc-skills](https://github.com/ReScienceLab/opc-skills), MIT |
 | codex-image | `/basejb:codex-image` | Codex CLI `image_gen`(gpt-image-2) 이미지 생성. OAuth 인증, API 키 불필요 | [wjb127/codex-image](https://github.com/wjb127/codex-image), MIT (수정) |
 | seo-optimizer | `/basejb:seo-optimizer` | SEO 콘텐츠 전략 · 기술 SEO · 키워드 리서치 가이드 | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), MIT |
+| image-optimizer | `/basejb:image-optimizer` | `cwebp`로 이미지를 WebP로 변환 (단일 / 일괄, 화질 유지) | 직접 작성 |
 
 ---
 
