@@ -7,5 +7,15 @@
     "url": "https://github.com/basejb"
   },
   "repository": "https://github.com/basejb/skills",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "skills",
+    "seo",
+    "image-generation",
+    "webp",
+    "product-hunt",
+    "codex"
+  ]
 }
