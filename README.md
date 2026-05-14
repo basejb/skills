@@ -24,6 +24,7 @@ After install, skills are invoked as `/basejb:<skill-name>`.
 |------|------------|-------------|
 | producthunt | `/basejb:producthunt` | Product Hunt GraphQL API wrapper (posts, topics, users, collections). Originally by [ReScienceLab](https://github.com/ReScienceLab/opc-skills), MIT. |
 | codex-image | `/basejb:codex-image` | Generate images via Codex CLI's `image_gen` (gpt-image-2). OAuth auth — no API key. Originally by [wjb127](https://github.com/wjb127/codex-image), MIT (modified). |
+| seo-optimizer | `/basejb:seo-optimizer` | SEO content strategy, technical SEO, keyword research. Originally by [davila7](https://github.com/davila7/claude-code-templates), MIT. |
 
 ## Local development
 
