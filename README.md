@@ -23,6 +23,7 @@ After install, skills are invoked as `/basejb:<skill-name>`.
 | Name | Invocation | Description |
 |------|------------|-------------|
 | hello | `/basejb:hello` | Sanity check that the plugin loaded |
+| producthunt | `/basejb:producthunt` | Product Hunt GraphQL API wrapper (posts, topics, users, collections). Originally by [ReScienceLab](https://github.com/ReScienceLab/opc-skills), MIT. |
 
 ## Local development
 
