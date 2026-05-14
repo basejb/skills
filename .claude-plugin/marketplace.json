@@ -1,0 +1,15 @@
+{
+  "name": "skills",
+  "owner": {
+    "name": "basejb",
+    "url": "https://github.com/basejb"
+  },
+  "plugins": [
+    {
+      "name": "basejb",
+      "source": "./",
+      "description": "Personal Claude Code skills (work/home sync)",
+      "version": "0.1.0"
+    }
+  ]
+}
