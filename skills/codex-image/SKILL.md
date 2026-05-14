@@ -11,6 +11,14 @@ allowed-tools:
   - AskUserQuestion
 ---
 
+<!--
+  Source:    https://github.com/wjb127/codex-image
+  Author:    wjb127 (Copyright (c) 2026 wjb127)
+  License:   MIT — see ./LICENSE
+  Based on:  upstream commit 91011992ebb0d199124240af734736e8253ee37e (2026-04-23)
+  Notes:     Modified from upstream by basejb.
+-->
+
 # codex-image — AI Image Generation via Codex OAuth
 
 Generate images using OpenAI's `gpt-image-2` model through Codex CLI.
