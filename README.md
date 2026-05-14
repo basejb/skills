@@ -24,6 +24,7 @@ After install, skills are invoked as `/basejb:<skill-name>`.
 |------|------------|-------------|
 | hello | `/basejb:hello` | Sanity check that the plugin loaded |
 | producthunt | `/basejb:producthunt` | Product Hunt GraphQL API wrapper (posts, topics, users, collections). Originally by [ReScienceLab](https://github.com/ReScienceLab/opc-skills), MIT. |
+| codex-image | `/basejb:codex-image` | Generate images via Codex CLI's `image_gen` (gpt-image-2). OAuth auth — no API key. |
 
 ## Local development
 
