@@ -1,44 +1,51 @@
 # basejb/skills
 
-Personal Claude Code skills, synced between work and home machines via plugin marketplace.
+자주 쓰는 Claude Code 스킬 모음. 여러 환경에서 스킬을 동기화하려고 만든 개인 marketplace.
 
-## Install
+## 설치
 
 ```
 /plugin marketplace add basejb/skills
 /plugin install basejb@skills
 ```
 
-After install, skills are invoked as `/basejb:<skill-name>`.
+설치 후 모든 스킬은 `/basejb:<이름>` 형태로 호출됩니다.
 
-## Update
+## 업데이트
 
 ```
 /plugin marketplace update skills
 /plugin update basejb@skills
 ```
 
-## Skills
+## 스킬
 
-| Name | Invocation | Description |
-|------|------------|-------------|
-| producthunt | `/basejb:producthunt` | Product Hunt GraphQL API wrapper (posts, topics, users, collections). Originally by [ReScienceLab](https://github.com/ReScienceLab/opc-skills), MIT. |
-| codex-image | `/basejb:codex-image` | Generate images via Codex CLI's `image_gen` (gpt-image-2). OAuth auth — no API key. Originally by [wjb127](https://github.com/wjb127/codex-image), MIT (modified). |
-| seo-optimizer | `/basejb:seo-optimizer` | SEO content strategy, technical SEO, keyword research. Originally by [davila7](https://github.com/davila7/claude-code-templates), MIT. |
+| 이름 | 호출 | 용도 | 출처 |
+|------|------|------|------|
+| producthunt | `/basejb:producthunt` | Product Hunt GraphQL API (글·토픽·유저·컬렉션 조회) | [ReScienceLab/opc-skills](https://github.com/ReScienceLab/opc-skills), MIT |
+| codex-image | `/basejb:codex-image` | Codex CLI `image_gen`(gpt-image-2) 이미지 생성. OAuth 인증, API 키 불필요 | [wjb127/codex-image](https://github.com/wjb127/codex-image), MIT (수정) |
+| seo-optimizer | `/basejb:seo-optimizer` | SEO 콘텐츠 전략 · 기술 SEO · 키워드 리서치 가이드 | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), MIT |
 
-## Local development
+---
 
-Load this repo directly without installing through the marketplace:
+## 개발 (저장소 관리자용)
+
+> 아래는 저장소를 직접 유지보수하는 관리자 — 또는 fork해서 본인 사본을 만든 사람 — 전용 메모입니다. `/plugin install`로 설치만 한 사용자는 무시해도 됩니다.
+
+### 로컬 개발
+
+마켓플레이스를 거치지 않고 이 repo 그대로 로드:
 
 ```
 claude --plugin-dir ~/Repositories/skills
 ```
 
-After editing a skill, run `/reload-plugins` to pick up changes.
+스킬 수정 후 `/reload-plugins`로 즉시 반영.
 
-## Adding a new skill
+### 스킬 추가 규칙
 
-1. Create `skills/<name>/SKILL.md` with YAML frontmatter (`description:` required).
-2. Bump `version` in `.claude-plugin/plugin.json`.
-3. `git add -A && git commit -m "add <name>" && git push`.
-4. On other machines: `/plugin marketplace update skills && /plugin update basejb@skills`.
+1. `skills/<이름>/SKILL.md` 작성 (frontmatter `description:` 필수, 이름은 kebab-case)
+2. 외부 코드를 가져온 경우 SKILL.md 상단에 출처 코멘트 + 원본 `LICENSE` 파일 함께 포함
+3. `.claude-plugin/plugin.json`의 `version` bump
+4. commit / push
+5. 다른 머신: `/plugin marketplace update skills && /plugin update basejb@skills`
