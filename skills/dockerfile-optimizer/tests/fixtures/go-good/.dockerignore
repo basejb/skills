@@ -1,0 +1,9 @@
+.git
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+bin
+dist
+vendor

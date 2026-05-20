@@ -1,0 +1,5 @@
+{
+  "name": "multi-stage-edge",
+  "dependencies": {"express": "^4.18.0"},
+  "devDependencies": {"typescript": "^5.0.0"}
+}
