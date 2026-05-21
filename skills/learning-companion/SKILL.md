@@ -17,9 +17,8 @@ allowed-tools:
   - Bash(scripts/new-note.sh:*)
   - Bash(scripts/update-index.sh:*)
   - Bash(scripts/list-in-progress.sh:*)
-  - Bash(mkdir -p:*)
-  - Bash(ls:*)
-  - Bash(cat:*)
+  - Bash(mkdir -p ~/learning-notes:*)
+  - Bash(ls ~/learning-notes:*)
 ---
 
 # Learning Companion
@@ -147,6 +146,7 @@ bash scripts/update-index.sh --mark-completed "<현재 slug>"
 - 5단계 모두 완료 → `--mark-completed` + frontmatter `status: completed`
 - 일부만 완료 → 노트의 frontmatter `status: in-progress` 유지 (별도 처리 없음)
 - 의도적 일부 단계 → `status: partial`로 노트 수정 (`Edit` 사용)
+- 사용자가 명시적으로 학습 포기 선언 (예: "이 자료는 그만") → `status: abandoned`로 노트 수정 + Reflection 섹션에 포기 이유 1줄 기록
 
 ## Edge Cases
 
