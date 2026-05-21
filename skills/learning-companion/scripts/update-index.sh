@@ -95,11 +95,9 @@ case "${1:-}" in
     [[ $# -ge 2 ]] || { echo "ERROR: --add-backlog requires a title" >&2; exit 2; }
     TITLE="$2"
     shift 2
-    FROM=""
-    if [[ "${1:-}" == "--from" ]]; then
-      [[ $# -ge 2 ]] || { echo "ERROR: --from requires a value" >&2; exit 2; }
-      FROM="$2"
-    fi
+    [[ "${1:-}" == "--from" ]] || { echo "ERROR: --add-backlog requires --from <slug>" >&2; exit 2; }
+    [[ $# -ge 2 ]] || { echo "ERROR: --from requires a value" >&2; exit 2; }
+    FROM="$2"
     ensure_index
     LINE="- [ ] $TITLE — from $FROM"
     insert_under_section "Backlog" "$LINE" "$TITLE"

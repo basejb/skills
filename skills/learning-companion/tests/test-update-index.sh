@@ -41,7 +41,7 @@ check "case2-idempotent" "[ $COUNT -eq 1 ]"
 # Case 3: completed로 이동
 "$SCRIPT" --mark-completed "2026-05-21-agents"
 check "case3-moved-to-completed" "awk '/^## Completed$/{found=1} found && /Building Effective Agents/{found=2} END{exit found!=2}' '$INDEX'"
-check "case3-removed-from-in-progress" "! awk '/^## In Progress$/{f=1; next} /^## /{f=0} f && /Building Effective Agents/{f=2} END{exit f!=1}' '$INDEX'"
+check "case3-removed-from-in-progress" "! awk '/^## In Progress$/{f=1; next} /^## /{f=0} f && /Building Effective Agents/{found=1} END{exit !found}' '$INDEX'"
 
 # Case 4: backlog 추가
 "$SCRIPT" --add-backlog "MCP Protocol Spec" --from "2026-05-21-agents"
@@ -53,6 +53,29 @@ check "case4-has-from-attribution" "grep -q 'from 2026-05-21-agents' '$INDEX'"
 "$SCRIPT" --add-backlog "MCP Protocol Spec" --from "2026-05-21-agents"
 COUNT=$(grep -c 'MCP Protocol Spec' "$INDEX")
 check "case5-backlog-idempotent" "[ $COUNT -eq 1 ]"
+
+# Case 6: title with YAML quotes (as produced by current new-note.sh)
+NOTE2="$TEST_TMPDIR/2026-05-22-quoted.md"
+cat > "$NOTE2" <<EOF
+---
+title: "Quoted Title: With Colon"
+source: "https://example.com/q"
+captured: 2026-05-22
+status: in-progress
+tags: [quoted-test]
+next: []
+---
+EOF
+"$SCRIPT" --add-in-progress "$NOTE2"
+check "case6-quoted-title-parsed-without-quotes" "grep -q '\[Quoted Title: With Colon\]' '$INDEX'"
+check "case6-no-literal-quotes-in-entry" "! grep -q '\[\"Quoted Title' '$INDEX'"
+
+# Case 7: --add-backlog without --from → exit 2
+set +e
+"$SCRIPT" --add-backlog "Orphan" >/dev/null 2>&1
+RC=$?
+set -e
+check "case7-add-backlog-requires-from" "[ $RC -eq 2 ]"
 
 echo
 echo "Results: $PASS passed, $FAIL failed"
