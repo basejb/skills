@@ -27,6 +27,7 @@
 | seo-optimizer | `/basejb:seo-optimizer` | SEO 콘텐츠 전략 · 기술 SEO · 키워드 리서치 가이드 | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), MIT |
 | image-optimizer | `/basejb:image-optimizer` | `cwebp`로 이미지를 WebP로 변환 (단일 / 일괄, 화질 유지) | 직접 작성 |
 | dockerfile-optimizer | `/basejb:dockerfile-optimizer` | Dockerfile을 빌드 속도·이미지 크기·보안·배포 안정성 4축으로 분석하고 개선안 제안 (Node.js / Python / Go) | 직접 작성 |
+| learning-companion | `/basejb:learning-companion` | 공식 문서·논문·블로그를 5단계 능동 학습 파이프라인으로 통과시키는 스킬. 파인만 재설명 → 액티브 리콜 퀴즈(원문 인용 채점) → 메타인지 회고 → 후속 주제 백로그까지, 학습 노트는 `~/learning-notes/`에 마크다운으로 누적 | 직접 작성 |
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "basejb",
   "description": "Personal Claude Code skills — work/home sync via plugin marketplace",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": {
     "name": "basejb",
     "url": "https://github.com/basejb"
@@ -19,6 +19,10 @@
     "codex",
     "dockerfile",
     "docker",
-    "security"
+    "security",
+    "learning",
+    "study",
+    "feynman",
+    "active-recall"
   ]
 }
