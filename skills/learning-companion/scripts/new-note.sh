@@ -9,9 +9,15 @@ SLUG=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --title) TITLE="$2"; shift 2 ;;
-    --source) SOURCE="$2"; shift 2 ;;
-    --slug) SLUG="$2"; shift 2 ;;
+    --title)
+      [[ $# -ge 2 ]] || { echo "ERROR: --title requires a value" >&2; exit 2; }
+      TITLE="$2"; shift 2 ;;
+    --source)
+      [[ $# -ge 2 ]] || { echo "ERROR: --source requires a value" >&2; exit 2; }
+      SOURCE="$2"; shift 2 ;;
+    --slug)
+      [[ $# -ge 2 ]] || { echo "ERROR: --slug requires a value" >&2; exit 2; }
+      SLUG="$2"; shift 2 ;;
     -h|--help)
       echo "Usage: new-note.sh --title <title> --source <url> [--slug <slug>]"
       exit 0
@@ -49,10 +55,16 @@ if [[ -e "$NOTE_PATH" ]]; then
   exit 1
 fi
 
+# YAML double-quoted string: escape backslash, then double quote
+TITLE_YAML=${TITLE//\\/\\\\}
+TITLE_YAML=${TITLE_YAML//\"/\\\"}
+SOURCE_YAML=${SOURCE//\\/\\\\}
+SOURCE_YAML=${SOURCE_YAML//\"/\\\"}
+
 cat > "$NOTE_PATH" <<EOF
 ---
-title: $TITLE
-source: $SOURCE
+title: "$TITLE_YAML"
+source: "$SOURCE_YAML"
 captured: $DATE
 status: in-progress
 tags: []
