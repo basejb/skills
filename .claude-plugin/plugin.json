@@ -1,7 +1,7 @@
 {
   "name": "basejb",
   "description": "Personal Claude Code skills — work/home sync via plugin marketplace",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": {
     "name": "basejb",
     "url": "https://github.com/basejb"
@@ -23,6 +23,9 @@
     "learning",
     "study",
     "feynman",
-    "active-recall"
+    "active-recall",
+    "oss",
+    "codebase",
+    "repo-learning"
   ]
 }
