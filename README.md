@@ -28,6 +28,8 @@
 | image-optimizer | `/basejb:image-optimizer` | `cwebp`로 이미지를 WebP로 변환 (단일 / 일괄, 화질 유지) | 직접 작성 |
 | dockerfile-optimizer | `/basejb:dockerfile-optimizer` | Dockerfile을 빌드 속도·이미지 크기·보안·배포 안정성 4축으로 분석하고 개선안 제안 (Node.js / Python / Go) | 직접 작성 |
 | learning-companion | `/basejb:learning-companion` | 공식 문서·논문·블로그를 5단계 능동 학습 파이프라인으로 통과시키는 스킬. 파인만 재설명 → 액티브 리콜 퀴즈(원문 인용 채점) → 메타인지 회고 → 후속 주제 백로그까지, 학습 노트는 `~/learning-notes/`에 마크다운으로 누적 | 직접 작성 |
+| oss-tour | `/basejb:oss-tour` | 오픈소스 레포 점진 학습 투어. 신원·규모 측정 → 최상위 지도 → 아키텍처 패턴 판정 → 중심 모듈 해부 → 실행 흐름 추적 → 읽기 순서 추천까지 6단계. 크기·커밋수 측정 기반 우선순위, 단계별 대화형 진행 | 직접 작성 |
+| ai-collab-evaluator | `/basejb:ai-collab-evaluator` | Claude Code 세션 로그를 AI 활용 역량 채용 기준 4가지(AI 다루기·활용·질문·트레이드오프)로 평가. 세션 선정 → 스켈레톤 추출(스크립트) → 증거 인용 기반 루브릭 채점 → 채용 제출물 변환 가이드까지 | 직접 작성 |
 
 ---
 
